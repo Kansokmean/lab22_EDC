@@ -7,8 +7,8 @@ function edc2() {
     var usePerMonth = parseFloat(new_num) - parseFloat(old_num);
     if (usePerMonth < 0) {
         alert("តម្លៃអំណានថ្មីត្រូវតែធំជាង អំណានចាស់!សូមព្យាយាមម្ដងទៀត ។");
-        location.href = "/index.html";
-
+        adc2();
+        
     }else{
         var trash = confirm("តើអ្នកចង់បង់ថ្លៃសំរាមដែរឬទេ?");
         var costTrash = 0;
