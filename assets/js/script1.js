@@ -15,22 +15,28 @@ function edcCal() {
     var getTrashCost = document.getElementById('getTrashCost');
     var amountCost = 0;
     var costPer = 0;
-    
-    var usePerMonth = parseFloat(new_num.value) - parseFloat(old_num.value); 
-    if(usePerMonth > 0 && usePerMonth < 51){
+
+    var usePerMonth = parseFloat(new_num.value) - parseFloat(old_num.value);
+    if (usePerMonth < 0) {
+        alert("តម្លៃអំណានថ្មីត្រូវតែធំជាង អំណានចាស់!សូមព្យាយាមម្ដងទៀត ។");
+        document.getElementById('boxempty').classList.remove('d-none');
+        document.getElementById('invoice').classList.add('d-none');
+        return;
+    }
+    if (usePerMonth > 0 && usePerMonth < 51) {
         costPer = 500;
-    }else if(usePerMonth <= 100){
+    } else if (usePerMonth <= 100) {
         costPer = 1000;
-    }else if(usePerMonth <= 150){
+    } else if (usePerMonth <= 150) {
         costPer = 1500;
-    }else if(usePerMonth <= 200){
+    } else if (usePerMonth <= 200) {
         costPer = 2000;
-    }else if(usePerMonth > 200){
+    } else if (usePerMonth > 200) {
         costPer = 2500;
-    }else{
+    } else {
         costPer = 1;
     }
-    amountCost = parseFloat(usePerMonth) * parseFloat(costPer);    
+    amountCost = parseFloat(usePerMonth) * parseFloat(costPer);
 
     getID.innerHTML = id_cus.value || 0;
     getName.innerHTML = name_cus.value || 0;
@@ -38,12 +44,14 @@ function edcCal() {
     getNewnum.innerHTML = new_num.value || 0;
     var TrashCost = 0;
     if (trash.checked) {
-        getTrashCost.innerHTML =  costTrash.value + "៛";
+        getTrashCost.innerHTML = costTrash.value + "៛";
         TrashCost = costTrash.value;
     } else {
         TrashCost = 0;
     }
-    document.getElementById('total').innerHTML = (amountCost + parseFloat(TrashCost)) +"៛";
+    getusePermonth.innerHTML = usePerMonth || 0;
+    document.getElementById('getcostPerKw').innerHTML = costPer + "៛";
+    document.getElementById('total').innerHTML = (amountCost + parseFloat(TrashCost)) + "៛";
 
 }
 

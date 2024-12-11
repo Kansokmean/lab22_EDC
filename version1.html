@@ -48,26 +48,29 @@
                             </select>
                             <div class="d-flex mt-4">
                                 <button type="button" class="btn btn-outline-info" onclick="edcCal()">គណនាតម្លៃ</button>
-                                <button type="button" class="btn btn-outline-danger ms-3" onclick="btnclear()">សម្អាត</button>
+                                <button type="button" class="btn btn-outline-danger ms-3"
+                                    onclick="btnclear()">សម្អាត</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="col-6">
                     <h5 class="moul">វិក័យប័ត្រ</h5>
-                  <div class="border w-75" id="boxempty">
-                    <div class="text-center text-secondary" style="padding: 100px;">មិនទាន់មានវិក័យប័ត្រ</div>
-                  </div>
-                  <div class="border w-75 d-none" id="invoice">
-                    <ul class="invoice">
-                        <li><span>លេខសម្គាល់អតិថិជន</span> <span id="getID">0</span></li>
-                        <li><span>ឈ្មោះអតិថិជន</span> <span id="getName">0</span></li>
-                        <li><span>លេខអំណានចាស់</span> <span id="getOldnum">0</span></li>
-                        <li><span>លេខអំណានថ្មី</span> <span id="getNewnum">0</span></li>
-                        <li><span>ថ្លៃសំរាម</span> <span id="getTrashCost">0</span></li>
-                        <li><span>តម្លៃសរុប</span> <span id="total">0</span></li>
-                    </ul>
-                  </div>
+                    <div class="border w-75" id="boxempty">
+                        <div class="text-center text-secondary" style="padding: 100px;">មិនទាន់មានវិក័យប័ត្រ</div>
+                    </div>
+                    <div class="border w-75 d-none" id="invoice">
+                        <ul class="invoice">
+                            <li><span>លេខសម្គាល់អតិថិជន</span> <span id="getID">0</span></li>
+                            <li><span>ឈ្មោះអតិថិជន</span> <span id="getName">0</span></li>
+                            <li><span>លេខអំណានចាស់(kw)</span> <span id="getOldnum">0</span></li>
+                            <li><span>លេខអំណានថ្មី(kw)</span> <span id="getNewnum">0</span></li>
+                            <li><span>លេខអំណានប្រើ(kw)</span> <span id="getusePermonth">0</span></li>
+                            <li><span>តម្លៃ/kw</span> <span id="getcostPerKw">0</span></li>
+                            <li><span>ថ្លៃសំរាម</span> <span id="getTrashCost">0</span></li>
+                            <li><span>តម្លៃសរុប</span> <span id="total">0</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

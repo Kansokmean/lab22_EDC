@@ -4,12 +4,19 @@ function edc2() {
     var name_cus = prompt('បញ្ចូលឈ្មោះអតិថិជន:');
     var old_num = prompt('បញ្ចូលអំណានចាស់:');
     var new_num = prompt('បញ្ចូលអំណានថ្មី:');
-    var trash = confirm("តើអ្នកចង់បង់ថ្លៃសំរាមដែរឬទេ?");
-    var costTrash = 0;
-    if (trash) {
-        costTrash = prompt('សូមបញ្ចូលតម្លៃសម្រាម(10000៛/20000៛/30000៛):');
-    } else {
-        costTrash = 0;
+    var usePerMonth = parseFloat(new_num) - parseFloat(old_num);
+    if (usePerMonth < 0) {
+        alert("តម្លៃអំណានថ្មីត្រូវតែធំជាង អំណានចាស់!សូមព្យាយាមម្ដងទៀត ។");
+        location.href = "/index.html";
+
+    }else{
+        var trash = confirm("តើអ្នកចង់បង់ថ្លៃសំរាមដែរឬទេ?");
+        var costTrash = 0;
+        if (trash) {
+            costTrash = prompt('សូមបញ្ចូលតម្លៃសម្រាម(10000៛/20000៛/30000៛):');
+        } else {
+            costTrash = 0;
+        }
     }
     var getID = document.getElementById('getID');
     var getName = document.getElementById('getName');
@@ -19,7 +26,6 @@ function edc2() {
     var amountCost = 0;
     var costPer = 0;
 
-    var usePerMonth = parseFloat(new_num) - parseFloat(old_num);
     if (usePerMonth > 0 && usePerMonth < 51) {
         costPer = 500;
     } else if (usePerMonth <= 100) {
@@ -41,6 +47,7 @@ function edc2() {
     getNewnum.innerHTML = new_num || 0;
     getusePermonth.innerHTML = usePerMonth || 0;
     getTrashCost.innerHTML = costTrash + "៛";
+    document.getElementById('getcostPerKw').innerHTML = costPer + "៛";
     document.getElementById('total').innerHTML = (amountCost + parseFloat(costTrash)) + "៛";
 }
 edc2();
